@@ -15,7 +15,6 @@ interface Props {
       >
         <h3 className="text-xl font-semibold">{container.name}</h3>
         <p>{container.description}</p>
-        
         <CreateItemForm containerId={container.id}/>
       </li>
     );
