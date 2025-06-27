@@ -1,20 +1,16 @@
-import type { Item } from "../common/types/Items";
-import CreateItemForm from "./CreateItemForm";
-
+import { Link } from "react-router-dom";
+import type { Item } from "../common/types/Item";
 
 interface Props {
-    item: Item;
-  }
-  export default function ItemCard({ item }: Props) {
-    return (
-        <li
-        className="p-4 rounded-lg shadow-md text-white text-black border"
-      >
-        <h3 className="text-lg font-semibold">{item.name}</h3>
-        <p className="text-sm text-gray-700">{item.description}</p>
-        <p className="text-sm text-gray-500">Container ID: {item.containerId}</p>
-        <CreateItemForm itemId={item.id}/>
-      </li>
-    );
-  }
+  item: Item;
+}
+
+export default function ItemCard({ item }: Props) {
+  return (
+    <li key={item.id} className="bg-amber-200 rounded-2xl p-2 m-2">
+      Name: {item.name} Container Id: {item.containerId}
+      <Link to={`/items/${item.id}`}>To item page</Link>
+    </li>
+  );
+}
    
